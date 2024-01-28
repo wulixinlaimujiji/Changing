@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\Xxx\OneDrive\Document\University\Intership\Changing\bin\Debug-x64\Changing\Changing.dll</FullPath>
+      <FullPath>C:\Users\Xxx\OneDrive\Document\University\Intership\Changing\bin\Debug-windows-x86_64\Changing\Changing.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
