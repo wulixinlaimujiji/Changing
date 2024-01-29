@@ -4,6 +4,9 @@
     <Filter Include="Changing">
       <UniqueIdentifier>{04E4DB80-F0B0-368C-19CA-243405F66B1A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Changing\Events">
+      <UniqueIdentifier>{686390BA-D4EE-FD7E-DDFF-8073490A5A7F}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Changing.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Changing\EntryPoint.h">
       <Filter>Changing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Events\ApplicationEvent.h">
+      <Filter>Changing\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Events\Event.h">
+      <Filter>Changing\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Events\KeyEvent.h">
+      <Filter>Changing\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Events\MouseEvent.h">
+      <Filter>Changing\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Log.h">
       <Filter>Changing</Filter>
