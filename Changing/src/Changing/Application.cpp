@@ -1,3 +1,4 @@
+#include "chngpch.h"
 #include "Application.h"
 
 #include "Changing/Events/ApplicationEvent.h"

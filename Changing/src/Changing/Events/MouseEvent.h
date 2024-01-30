@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Changing {
 
 	class CHANGING_API MouseMovedEvent : public Event

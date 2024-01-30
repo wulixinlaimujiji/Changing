@@ -18,6 +18,9 @@ project "Changing"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "chngpch.h"
+	pchsource "Changing/src/chngpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
