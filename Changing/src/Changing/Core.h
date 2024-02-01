@@ -10,4 +10,12 @@
 	#error Changing only supports Windows!
 #endif
 
+#ifdef CHNG_ENABLE_ASSERTS
+	#define CHNG_ASSERT(x, ...) { if(!(x)) { CHNG_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define CHNG_CORE_ASSERT(x, ...) { if(!(x)) { CHNG_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define CHNG_ASSERT(x, ...)
+	#define CHNG_CORE_ASSERT(x, ...)
+#endif
+
 #define BIT(x) (1 << x)
