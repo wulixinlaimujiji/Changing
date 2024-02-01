@@ -1,3 +1,6 @@
 [submodule "Changing/vendor/spdlog"]
 	path = Changing/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Changing/vendor/GLFW"]
+	path = Changing/vendor/GLFW
+	url = https://github.com/glfw/glfw
