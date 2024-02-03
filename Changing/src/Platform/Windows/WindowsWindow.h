@@ -30,13 +30,15 @@ namespace Changing {
 
 	private:
 		GLFWwindow* m_Window;  // GLFW窗口指针
+
 		struct WindowData
 		{
 			std::string Title;
 			unsigned int Width, Height;
 			bool VSync;
 			EventCallbackFn EventCallback;
-		} m_Data;  // 窗口数据对象
+		};
+		WindowData m_Data;  // 窗口数据对象
 	};
 
 }

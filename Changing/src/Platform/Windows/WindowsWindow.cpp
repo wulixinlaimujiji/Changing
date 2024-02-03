@@ -61,7 +61,7 @@ namespace Changing {
 				data.Width = width;
 				data.Height = height;
 				WindowResizeEvent event(width, height);
-				data.EventCallback;
+				data.EventCallback(event);
 			});
 		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
 			{
