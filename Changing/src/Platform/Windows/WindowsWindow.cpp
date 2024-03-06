@@ -5,6 +5,8 @@
 #include "Changing/Events/MouseEvent.h"
 #include "Changing/Events/KeyEvent.h"
 
+#include <glad/glad.h>
+
 namespace Changing {
 
 	static bool s_GLFWInitialized = false; // 初始化标志
@@ -51,6 +53,8 @@ namespace Changing {
 		// 创建窗口
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		CHNG_CORE_ASSERT(status, "Failed to initialize Glad!");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 

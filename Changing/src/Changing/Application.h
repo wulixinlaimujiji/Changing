@@ -1,9 +1,10 @@
 #pragma once
 
 #include "Core.h"
-#include "Events/Event.h"
-#include "Events/ApplicationEvent.h"
 #include "Window.h"
+#include "Changing/LayerStack.h"
+#include "Changing/Events/Event.h"
+#include "Changing/Events/ApplicationEvent.h"
 
 namespace Changing {
 
@@ -20,6 +21,8 @@ namespace Changing {
 
 		// 处理事件
 		void OnEvent(Event& e);
+		void PushLayer(Layer* layer);
+		void PushOverlay(Layer* layer);
 
 	private:
 		// 处理窗口关闭事件
@@ -27,6 +30,7 @@ namespace Changing {
 
 		std::unique_ptr<Window> m_Window;  // 窗口对象
 		bool m_Running = true;  // 应用程序运行状态标志
+		LayerStack m_LayerStack;
 	};
 	
 	// 创建应用程序对象

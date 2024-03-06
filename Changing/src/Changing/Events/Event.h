@@ -35,8 +35,8 @@ namespace Changing {
 	// 事件基类
 	class CHANGING_API Event
 	{
-		friend class EventDispatcher;
 	public:
+		bool Handled = false;  // 事件是否已处理标志
 		virtual EventType GetEventType() const = 0;  // 获取事件类型
 		virtual const char* GetName() const = 0;  // 获取事件名称
 		virtual int GetCategoryFlags() const = 0;  // 获取事件类别标志
@@ -47,8 +47,6 @@ namespace Changing {
 		{
 			return GetCategoryFlags() & category;
 		}
-	protected:
-		bool m_Handled = false;  // 事件是否已处理标志
 	};
 
 	// 事件分发器类（用于分发特定类型的事件）
@@ -66,7 +64,7 @@ namespace Changing {
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

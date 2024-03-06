@@ -37,6 +37,12 @@
     <ClInclude Include="src\Changing\Events\MouseEvent.h">
       <Filter>Changing\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Changing\Layer.h">
+      <Filter>Changing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\LayerStack.h">
+      <Filter>Changing</Filter>
+    </ClInclude>
     <ClInclude Include="src\Changing\Log.h">
       <Filter>Changing</Filter>
     </ClInclude>
@@ -50,6 +56,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Application.cpp">
+      <Filter>Changing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Layer.cpp">
+      <Filter>Changing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\LayerStack.cpp">
       <Filter>Changing</Filter>
     </ClCompile>
     <ClCompile Include="src\Changing\Log.cpp">
