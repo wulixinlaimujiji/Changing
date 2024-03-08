@@ -11,7 +11,7 @@ namespace Changing {
 		Node = 0,
 		WindowClose, WindowResize, WindowFocus, WindowLosFocus, WindowMoved,
 		AppTick, AppUpdate, AppRender,
-		KeyPressed, KeyReleased,
+		KeyPressed, KeyReleased, KeyTyped,
 		MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
 	};
 

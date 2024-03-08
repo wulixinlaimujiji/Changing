@@ -24,6 +24,9 @@ namespace Changing {
 		void PushLayer(Layer* layer);
 		void PushOverlay(Layer* layer);
 
+		inline Window& GetWindow() { return *m_Window; }
+		inline static Application& Get() { return *s_Instance; }
+
 	private:
 		// 处理窗口关闭事件
 		bool OnWindowClose(WindowCloseEvent& e);
@@ -31,6 +34,9 @@ namespace Changing {
 		std::unique_ptr<Window> m_Window;  // 窗口对象
 		bool m_Running = true;  // 应用程序运行状态标志
 		LayerStack m_LayerStack;
+
+	private:
+		static Application* s_Instance;
 	};
 	
 	// 创建应用程序对象

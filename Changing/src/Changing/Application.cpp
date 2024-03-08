@@ -9,9 +9,14 @@ namespace Changing {
 	// 绑定事件回调
 	#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
+	Application* Application::s_Instance = nullptr;
+
 	// 构造函数和析构函数
 	Application::Application()
 	{
+		CHNG_CORE_ASSERT(!s_Instance, "Application already exists!");
+		s_Instance = this;
+
 		// 创建窗口并设置事件回调
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
@@ -23,10 +28,12 @@ namespace Changing {
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
+		layer->OnAttach();
 	}
 	// 处理事件
 	void Application::OnEvent(Event& e)

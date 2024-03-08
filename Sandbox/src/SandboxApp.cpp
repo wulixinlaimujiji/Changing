@@ -1,15 +1,34 @@
 #include <Changing.h>
 
-class Sandbox : public Changing::Application
+class ExampleLayer : public Changing::Layer
 {
 public:
-	Sandbox()
+	ExampleLayer()
+		: Layer("Example")
 	{
 	}
 
-	~Sandbox()
+	void OnUpdate() override
 	{
+		CHNG_INFO("ExampleLayer::Update");
 	}
+
+	void OnEvent(Changing::Event& event) override
+	{
+		CHNG_TRACE("{0}", event);
+	}
+
+};
+
+class Sandbox : public Changing::Application
+{
+public:
+	Sandbox() 
+	{
+		PushLayer(new ExampleLayer());
+		PushOverlay(new Changing::ImGuiLayer());
+	}
+	~Sandbox() {}
 };
 
 Changing::Application* Changing::CreateApplication()
