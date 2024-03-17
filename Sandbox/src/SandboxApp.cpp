@@ -8,12 +8,23 @@ public:
 
 	void OnUpdate() override
 	{
-		CHNG_INFO("ExampleLayer::Update");
+		if (Changing::Input::IsKeyPressed(CHNG_KEY_TAB))
+		{
+			CHNG_TRACE("Tab key is pressed (poll)!");
+		}
 	}
 
 	void OnEvent(Changing::Event& event) override
 	{
-		CHNG_TRACE("{0}", event);
+		if (event.GetEventType() == Changing::EventType::KeyPressed)
+		{
+			Changing::KeyPressedEvent& e = (Changing::KeyPressedEvent&)event;
+			if (e.GetKeyCode() == CHNG_KEY_TAB)
+			{
+				CHNG_TRACE("Tab key is pressed (event)!");
+			}
+			CHNG_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 
 };
