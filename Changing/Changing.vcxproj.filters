@@ -1359,6 +1359,18 @@
     <ClInclude Include="src\Changing\Renderer\GraphicsContext.h">
       <Filter>src\Changing\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Changing\Renderer\Renderer.h">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Renderer\Buffer.h">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Renderer\Shader.h">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Application.cpp">
@@ -1390,6 +1402,18 @@
     </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Renderer\Renderer.cpp">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Renderer\Buffer.cpp">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Renderer\Shader.cpp">
+      <Filter>src\Changing\Renderer</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
