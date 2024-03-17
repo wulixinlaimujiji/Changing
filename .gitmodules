@@ -7,3 +7,6 @@
 [submodule "Changing/vendor/imgui"]
 	path = Changing/vendor/imgui
 	url = https://github.com/ocornut/imgui
+[submodule "Changing/vendor/glm"]
+	path = Changing/vendor/glm
+	url = https://github.com/g-truc/glm
