@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Changing/Window.h"
+#include "Changing/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
 
@@ -28,6 +29,7 @@ namespace Changing {
 
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
