@@ -10,6 +10,10 @@
 	#error Changing only supports Windows!
 #endif
 
+#ifdef HZ_DEBUG
+	#define CHNG_ENABLE_ASSERTS
+#endif
+
 #ifdef CHNG_ENABLE_ASSERTS
 	#define CHNG_ASSERT(x, ...) { if(!(x)) { CHNG_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define CHNG_CORE_ASSERT(x, ...) { if(!(x)) { CHNG_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }

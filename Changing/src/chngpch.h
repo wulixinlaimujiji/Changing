@@ -15,5 +15,5 @@
 #include "Changing/Log.h"
 
 #ifdef CHNG_PLATFORM_WINDOWS
-	#include <windows.h>
+	#include <Windows.h>
 #endif

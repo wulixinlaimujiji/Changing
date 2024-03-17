@@ -9,20 +9,18 @@
 
 namespace Changing {
 
-	static bool s_GLFWInitialized = false; // 初始化标志
+	static bool s_GLFWInitialized = false;
 
 	static void GLFWErrorCallback(int error, const char* description)
 	{
 		CHNG_CORE_ERROR("GLFW Error ({0}):{1}", error, description);
 	}
 
-	// 创建窗口
 	Window* Window::Create(const WindowProps& props)
 	{
 		return new WindowsWindow(props);
 	}
 
-	// 构造和析构函数
 	WindowsWindow::WindowsWindow(const WindowProps& props)
 	{
 		Init(props);
@@ -32,7 +30,6 @@ namespace Changing {
 		Shutdown();
 	}
 
-	// 初始化和关闭窗口
 	void WindowsWindow::Init(const WindowProps& props)
 	{
 		m_Data.Title = props.Title;
@@ -41,7 +38,6 @@ namespace Changing {
 
 		CHNG_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
-		// 初始化 GLFW
 		if (!s_GLFWInitialized)
 		{
 			int success = glfwInit();
@@ -50,7 +46,6 @@ namespace Changing {
 			s_GLFWInitialized = true;
 		}
 
-		// 创建窗口
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
@@ -58,7 +53,6 @@ namespace Changing {
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
-		// 设置 GLFW 事件回调
 		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
 			{
 				WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
@@ -140,15 +134,12 @@ namespace Changing {
 	{
 		glfwDestroyWindow(m_Window);
 	}
-
-	// 更新窗口
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
 		glfwSwapBuffers(m_Window);
 	}
 
-	// setter and getter
 	void WindowsWindow::SetVSync(bool enabled)
 	{
 		if (enabled)
@@ -165,4 +156,5 @@ namespace Changing {
 	{
 		return m_Data.VSync;
 	}
+
 }

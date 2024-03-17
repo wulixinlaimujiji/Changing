@@ -3,6 +3,7 @@
 
 #include "imgui.h"
 #include "Platform/OpenGL/ImGuiOpenGLRenderer.h"
+
 #include "Changing/Application.h"
 
 #include <GLFW/glfw3.h>
@@ -11,14 +12,8 @@
 namespace Changing {
 
 	ImGuiLayer::ImGuiLayer()
-		: Layer("ImGuiLayer")
-	{
-	
-	}
-	ImGuiLayer::~ImGuiLayer()
-	{
-	
-	}
+		: Layer("ImGuiLayer") {}
+	ImGuiLayer::~ImGuiLayer() {}
 
 	void ImGuiLayer::OnAttach()
 	{
@@ -54,12 +49,7 @@ namespace Changing {
 
 		ImGui_ImplOpenGL3_Init("#version 410");
 	}
-
-	void ImGuiLayer::OnDetach()
-	{
-	
-	}
-
+	void ImGuiLayer::OnDetach() {}
 	void ImGuiLayer::OnUpdate()
 	{
 		ImGuiIO& io = ImGui::GetIO();
@@ -79,7 +69,6 @@ namespace Changing {
 		ImGui::Render();
 		ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 	}
-
 	void ImGuiLayer::OnEvent(Event& event)
 	{
 		EventDispatcher dispatcher(event);
@@ -99,21 +88,18 @@ namespace Changing {
 		io.MouseDown[e.GetMouseButton()] = true;
 		return false;
 	}
-
 	bool ImGuiLayer::OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.MouseDown[e.GetMouseButton()] = false;
 		return false;
 	}
-
 	bool ImGuiLayer::OnMouseMovedEvent(MouseMovedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.MousePos = ImVec2(e.GetX(), e.GetY());
 		return false;
 	}
-
 	bool ImGuiLayer::OnMouseScrolledEvent(MouseScrolledEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
@@ -121,7 +107,6 @@ namespace Changing {
 		io.MouseWheel += e.GetYOffset();
 		return false;
 	}
-
 	bool ImGuiLayer::OnKeyPressedEvent(KeyPressedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
@@ -132,14 +117,12 @@ namespace Changing {
 		io.KeySuper = io.KeysDown[GLFW_KEY_LEFT_SUPER] || io.KeysDown[GLFW_KEY_RIGHT_SUPER];
 		return false;
 	}
-
 	bool ImGuiLayer::OnKeyReleasedEvent(KeyReleasedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
 		io.KeysDown[e.GetKeyCode()] = false;
 		return false;
 	}
-
 	bool ImGuiLayer::OnKeyTypedEvent(KeyTypedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
@@ -150,7 +133,6 @@ namespace Changing {
 		}
 		return false;
 	}
-
 	bool ImGuiLayer::OnWindowResizeEvent(WindowResizeEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();

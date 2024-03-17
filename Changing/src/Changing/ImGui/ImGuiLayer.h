@@ -18,7 +18,6 @@ namespace Changing {
 		virtual void OnDetach();
 		virtual void OnUpdate();
 		virtual void OnEvent(Event& event);
-
 	private:
 		bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
 		bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
@@ -28,7 +27,6 @@ namespace Changing {
 		bool OnKeyReleasedEvent(KeyReleasedEvent& e);
 		bool OnKeyTypedEvent(KeyTypedEvent& e);
 		bool OnWindowResizeEvent(WindowResizeEvent& e);
-
 	private:
 		float m_Time = 0.0f;
 	};

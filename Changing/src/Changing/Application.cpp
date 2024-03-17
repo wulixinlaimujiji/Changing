@@ -1,29 +1,25 @@
 #include "chngpch.h"
 #include "Application.h"
 
-#include <GLFW/glfw3.h>
+#include "Changing/Log.h"
+
 #include <glad/glad.h>
 
 namespace Changing {
 
-	// 绑定事件回调
 	#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 	Application* Application::s_Instance = nullptr;
 
-	// 构造函数和析构函数
 	Application::Application()
 	{
 		CHNG_CORE_ASSERT(!s_Instance, "Application already exists!");
 		s_Instance = this;
 
-		// 创建窗口并设置事件回调
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 	}
-	Application::~Application()
-	{
-	}
+	Application::~Application()	{}
 
 	void Application::PushLayer(Layer* layer)
 	{
@@ -35,7 +31,7 @@ namespace Changing {
 		m_LayerStack.PushOverlay(layer);
 		layer->OnAttach();
 	}
-	// 处理事件
+
 	void Application::OnEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
@@ -50,7 +46,6 @@ namespace Changing {
 		}
 	}
 
-	// 运行应用程序
 	void Application::Run()
 	{
 		while (m_Running)
@@ -65,7 +60,6 @@ namespace Changing {
 		}
 	}
 
-	// 处理窗口关闭事件
 	bool Application::OnWindowClose(WindowCloseEvent& e)
 	{
 		m_Running = false;

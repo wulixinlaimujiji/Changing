@@ -65,6 +65,12 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\chngpch.h" />
+    <ClInclude Include="src\Changing\Input.h">
+      <Filter>Changing</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowsInput.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Application.cpp">
@@ -89,5 +95,8 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\chngpch.cpp" />
+    <ClCompile Include="WindowsInput.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

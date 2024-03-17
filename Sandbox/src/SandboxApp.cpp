@@ -4,9 +4,7 @@ class ExampleLayer : public Changing::Layer
 {
 public:
 	ExampleLayer()
-		: Layer("Example")
-	{
-	}
+		: Layer("Example") {}
 
 	void OnUpdate() override
 	{

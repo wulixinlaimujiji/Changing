@@ -11,7 +11,7 @@ namespace Changing {
 
 		EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
 	protected:
-		KeyEvent(int keycode)
+		KeyEvent(int keycode) 
 			: m_KeyCode(keycode) {}
 		
 		int m_KeyCode;
@@ -20,7 +20,7 @@ namespace Changing {
 	class CHANGING_API KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressedEvent(int keycode, int repeatCount)
+		KeyPressedEvent(int keycode, int repeatCount) 
 			: KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
 		inline int GetRepeatCount() const { return m_RepeatCount; }
@@ -40,7 +40,7 @@ namespace Changing {
 	class CHANGING_API KeyReleasedEvent : public KeyEvent
 	{
 	public:
-		KeyReleasedEvent(int keycode)
+		KeyReleasedEvent(int keycode) 
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override
@@ -56,7 +56,7 @@ namespace Changing {
 	class CHANGING_API KeyTypedEvent : public KeyEvent
 	{
 	public:
-		KeyTypedEvent(int keycode)
+		KeyTypedEvent(int keycode) 
 			: KeyEvent(keycode) {}
 
 		std::string ToString() const override
@@ -68,4 +68,5 @@ namespace Changing {
 
 		EVENT_CLASS_TYPE(KeyTyped)
 	};
+
 }

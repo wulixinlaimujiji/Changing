@@ -92,4 +92,5 @@ namespace Changing {
 
 		EVENT_CLASS_TYPE(MouseButtonReleased)
 	};
+
 }
