@@ -110,6 +110,7 @@ project "Sandbox"
 	{
 		"Changing/vendor/spdlog/include",
 		"Changing/src",
+		"Changing/vendor",
 		"%{IncludeDir.glm}"
 	}
 

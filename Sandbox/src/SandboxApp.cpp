@@ -1,5 +1,7 @@
 #include <Changing.h>
 
+#include "imgui/imgui.h"
+
 class ExampleLayer : public Changing::Layer
 {
 public:
@@ -13,6 +15,13 @@ public:
 			CHNG_TRACE("Tab key is pressed (poll)!");
 		}
 	}
+
+	//virtual void OnImGuiRender() override
+	//{
+	//	ImGui::Begin("Test");
+	//	ImGui::Text("Hello World");
+	//	ImGui::End();
+	//}
 
 	void OnEvent(Changing::Event& event) override
 	{
@@ -35,7 +44,6 @@ public:
 	Sandbox() 
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Changing::ImGuiLayer());
 	}
 	~Sandbox() {}
 };
