@@ -4,10 +4,19 @@
     <Filter Include="src">
       <UniqueIdentifier>{5b3a420d-7faa-4494-9556-c494d6f25c5d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets">
+      <UniqueIdentifier>{7a7142ad-9a57-4c63-8cea-11e78149e675}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\textures">
+      <UniqueIdentifier>{e5d278ad-5dbb-41b1-99c2-7bea6eed45b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SandboxApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\Checkerboard.png" />
   </ItemGroup>
 </Project>

@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "Changing/vendor/GLFW/include"
 IncludeDir["Glad"] = "Changing/vendor/Glad/include"
 IncludeDir["ImGui"] = "Changing/vendor/imgui"
 IncludeDir["glm"] = "Changing/vendor/glm"
+IncludeDir["stb_image"] = "Changing/vendor/stb_image"
 
 group "Dependencies"
 	include "Changing/vendor/GLFW"
@@ -42,6 +43,8 @@ project "Changing"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/stb_image/**.h",
+		"%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
 	}
@@ -58,7 +61,8 @@ project "Changing"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb_image}"
 	}
 
 	links
