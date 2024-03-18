@@ -17,6 +17,7 @@
 
 // ---Renderer------------------------
 #include "Changing/Renderer/Renderer.h"
+#include "Changing/Renderer/Renderer2D.h"
 #include "Changing/Renderer/RenderCommand.h"
 
 #include "Changing/Renderer/Buffer.h"
@@ -25,8 +26,4 @@
 #include "Changing/Renderer/VertexArray.h"
 
 #include "Changing/Renderer/OrthographicCamera.h"
-// -----------------------------------
-
-// -------Entry Point--------------
-#include "Changing/Core/EntryPoint.h"
 // --------------------------------
