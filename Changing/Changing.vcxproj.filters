@@ -1377,6 +1377,15 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\Changing\Renderer\RendererAPI.h">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Renderer\RenderCommand.h">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Application.cpp">
@@ -1426,6 +1435,15 @@
     </ClCompile>
     <ClCompile Include="src\chngpch.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Renderer\RendererAPI.cpp">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Renderer\RenderCommand.cpp">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

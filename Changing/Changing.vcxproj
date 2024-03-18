@@ -143,6 +143,9 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="src\Changing\Renderer\RenderCommand.h" />
+    <ClInclude Include="src\Changing\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Changing.h" />
     <ClInclude Include="src\Changing\Application.h" />
     <ClInclude Include="src\Changing\Core.h" />
@@ -588,6 +591,9 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="src\Changing\Renderer\RenderCommand.cpp" />
+    <ClCompile Include="src\Changing\Renderer\RendererAPI.cpp" />
     <ClCompile Include="src\Changing\Application.cpp" />
     <ClCompile Include="src\Changing\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Changing\ImGui\ImGuiLayer.cpp" />
