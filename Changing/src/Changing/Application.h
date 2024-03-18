@@ -13,6 +13,8 @@
 #include "Changing/Renderer/Buffer.h"
 #include "Changing/Renderer/VertexArray.h"
 
+#include "Changing/Renderer/OrthographicCamera.h"
+
 namespace Changing {
 
 	class CHANGING_API Application
@@ -43,6 +45,8 @@ namespace Changing {
 
 		std::shared_ptr<Shader> m_BlueShader;
 		std::shared_ptr<VertexArray> m_SquareVA;
+
+		OrthographicCamera m_Camera;
 	private:
 		static Application* s_Instance;
 	};
