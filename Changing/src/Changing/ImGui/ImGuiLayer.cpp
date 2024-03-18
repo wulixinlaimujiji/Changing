@@ -14,7 +14,6 @@ namespace Changing {
 
 	ImGuiLayer::ImGuiLayer()
 		: Layer("ImGuiLayer") {}
-	ImGuiLayer::~ImGuiLayer() {}
 
 	void ImGuiLayer::OnAttach()
 	{
@@ -54,6 +53,7 @@ namespace Changing {
 		ImGui_ImplGlfw_Shutdown();
 		ImGui::DestroyContext();
 	}
+
 	void ImGuiLayer::OnImGuiRender()
 	{
 		static bool show = true;
@@ -84,4 +84,5 @@ namespace Changing {
 			glfwMakeContextCurrent(backup_current_context);
 		}
 	}
+
 }

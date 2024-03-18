@@ -18,9 +18,12 @@ IncludeDir["Glad"] = "Changing/vendor/Glad/include"
 IncludeDir["ImGui"] = "Changing/vendor/imgui"
 IncludeDir["glm"] = "Changing/vendor/glm"
 
-include "Changing/vendor/GLFW"
-include "Changing/vendor/Glad"
-include "Changing/vendor/imgui"
+group "Dependencies"
+	include "Changing/vendor/GLFW"
+	include "Changing/vendor/Glad"
+	include "Changing/vendor/imgui"
+
+group ""
 
 project "Changing"
 	location "Changing"
@@ -121,7 +124,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
 		systemversion "latest"
 
 		defines

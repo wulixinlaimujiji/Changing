@@ -49,10 +49,10 @@ namespace Changing {
 		m_SquareVA.reset(VertexArray::Create());
 
 		float squareVertices[3 * 4] = {
-					-0.75f, -0.75f, 0.0f,
-					 0.75f, -0.75f, 0.0f,
-					 0.75f,  0.75f, 0.0f,
-					-0.75f,  0.75f, 0.0f
+			-0.75f, -0.75f, 0.0f,
+			 0.75f, -0.75f, 0.0f,
+			 0.75f,  0.75f, 0.0f,
+			-0.75f,  0.75f, 0.0f
 		};
 
 		std::shared_ptr<VertexBuffer> squareVB;
@@ -105,7 +105,9 @@ namespace Changing {
 			#version 330 core
 			
 			layout(location = 0) in vec3 a_Position;
+
 			out vec3 v_Position;
+
 			void main()
 			{
 				v_Position = a_Position;
@@ -117,7 +119,9 @@ namespace Changing {
 			#version 330 core
 			
 			layout(location = 0) out vec4 color;
+
 			in vec3 v_Position;
+
 			void main()
 			{
 				color = vec4(0.2, 0.3, 0.8, 1.0);
@@ -126,17 +130,14 @@ namespace Changing {
 
 		m_BlueShader.reset(new Shader(blueShaderVertexSrc, blueShaderFragmentSrc));
 	}
-	Application::~Application()	{}
 
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
-		layer->OnAttach();
 	}
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
-		layer->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)
@@ -148,7 +149,9 @@ namespace Changing {
 		{
 			(*--it)->OnEvent(e);
 			if (e.Handled)
+			{
 				break;
+			}
 		}
 	}
 
