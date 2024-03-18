@@ -147,6 +147,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Changing\OrthographicCameraController.h" />
     <ClInclude Include="src\Changing.h" />
     <ClInclude Include="src\Changing\Application.h" />
     <ClInclude Include="src\Changing\Core.h" />
@@ -601,6 +602,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Changing\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Changing\Application.cpp" />
     <ClCompile Include="src\Changing\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Changing\ImGui\ImGuiLayer.cpp" />
