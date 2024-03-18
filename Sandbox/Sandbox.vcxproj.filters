@@ -10,18 +10,13 @@
     <Filter Include="assets\textures">
       <UniqueIdentifier>{e5d278ad-5dbb-41b1-99c2-7bea6eed45b9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets\shaders">
+      <UniqueIdentifier>{dde41005-e3f3-480b-a5bd-3636904a6396}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SandboxApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="assets\textures\Logo.png">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Checkerboard.png">
-      <Filter>assets\textures</Filter>
-    </Image>
   </ItemGroup>
 </Project>
