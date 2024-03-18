@@ -7,17 +7,13 @@
 #include "Changing/Events/Event.h"
 #include "Changing/Events/ApplicationEvent.h"
 
+#include "Changing/Core/Timestep.h"
+
 #include "Changing/ImGui/ImGuiLayer.h"
-
-#include "Changing/Renderer/Shader.h"
-#include "Changing/Renderer/Buffer.h"
-#include "Changing/Renderer/VertexArray.h"
-
-#include "Changing/Renderer/OrthographicCamera.h"
 
 namespace Changing {
 
-	class CHANGING_API Application
+	class Application
 	{
 	public:
 		Application();
@@ -34,19 +30,12 @@ namespace Changing {
 		inline static Application& Get() { return *s_Instance; }
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
-
+	private:
 		std::unique_ptr<Window> m_Window;
 		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
-
-		std::shared_ptr<Shader> m_Shader;
-		std::shared_ptr<VertexArray> m_VertexArray;
-
-		std::shared_ptr<Shader> m_BlueShader;
-		std::shared_ptr<VertexArray> m_SquareVA;
-
-		OrthographicCamera m_Camera;
+		float m_LastFrameTime = 0.0f;
 	private:
 		static Application* s_Instance;
 	};

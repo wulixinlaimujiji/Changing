@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Changing/Core.h"
+#include "Changing/Core/Timestep.h"
 #include "Changing/Events/Event.h"
 
 namespace Changing {
@@ -13,7 +14,7 @@ namespace Changing {
 
 		virtual void OnAttach() {}
 		virtual void OnDetach() {}
-		virtual void OnUpdate() {}
+		virtual void OnUpdate(Timestep ts) {}
 		virtual void OnImGuiRender() {}
 		virtual void OnEvent(Event& event) {}
 
