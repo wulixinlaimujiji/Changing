@@ -90,7 +90,7 @@ public:
 				color = v_Color;
 			}
 		)";
-		m_Shader.reset(Changing::Shader::Create(vertexSrc, fragmentSrc));
+		m_Shader = Changing::Shader::Create("VertexPosColor", vertexSrc, fragmentSrc);
 
 		std::string flatColorShaderVertexSrc = R"(
 			#version 330 core
@@ -122,15 +122,15 @@ public:
 				color = vec4(u_Color, 1.0);
 			}
 		)";
-		m_FlatColorShader.reset(Changing::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
+		m_FlatColorShader = Changing::Shader::Create("FlatColor", flatColorShaderVertexSrc, flatColorShaderFragmentSrc);
 
-		m_TextureShader.reset(Changing::Shader::Create("assets/shaders/Texture.glsl"));
+		auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 		m_Texture = Changing::Texture2D::Create("assets/textures/Checkerboard.png");
 		m_LogoTexture = Changing::Texture2D::Create("assets/textures/Logo.png");
 
-		std::dynamic_pointer_cast<Changing::OpenGLShader>(m_TextureShader)->Bind();
-		std::dynamic_pointer_cast<Changing::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<Changing::OpenGLShader>(textureShader)->Bind();
+		std::dynamic_pointer_cast<Changing::OpenGLShader>(textureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(Changing::Timestep ts) override
@@ -185,10 +185,12 @@ public:
 			}
 		}
 
+		auto textureShader = m_ShaderLibrary.Get("Texture");
+
 		m_Texture->Bind();
-		Changing::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));	
+		Changing::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 		m_LogoTexture->Bind();
-		Changing::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		Changing::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		Changing::Renderer::EndScene();
 	}
@@ -203,10 +205,11 @@ public:
 	void OnEvent(Changing::Event& event) override {}
 
 private:
+	Changing::ShaderLibrary m_ShaderLibrary;
 	Changing::Ref<Changing::Shader> m_Shader;
 	Changing::Ref<Changing::VertexArray> m_VertexArray;
 
-	Changing::Ref<Changing::Shader> m_FlatColorShader, m_TextureShader;
+	Changing::Ref<Changing::Shader> m_FlatColorShader;
 	Changing::Ref<Changing::VertexArray> m_SquareVA;
 
 	Changing::Ref<Changing::Texture2D> m_Texture, m_LogoTexture;
