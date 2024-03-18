@@ -17,6 +17,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="assets\textures\Checkerboard.png" />
+    <Image Include="assets\textures\Logo.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Checkerboard.png">
+      <Filter>assets\textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

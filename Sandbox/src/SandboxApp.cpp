@@ -155,6 +155,7 @@ public:
 		m_TextureShader.reset(Changing::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
 
 		m_Texture = Changing::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_LogoTexture = Changing::Texture2D::Create("assets/textures/Logo.png");
 
 		std::dynamic_pointer_cast<Changing::OpenGLShader>(m_TextureShader)->Bind();
 		std::dynamic_pointer_cast<Changing::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
@@ -214,6 +215,8 @@ public:
 
 		m_Texture->Bind();
 		Changing::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));	
+		m_LogoTexture->Bind();
+		Changing::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		Changing::Renderer::EndScene();
 	}
@@ -234,7 +237,7 @@ private:
 	Changing::Ref<Changing::Shader> m_FlatColorShader, m_TextureShader;
 	Changing::Ref<Changing::VertexArray> m_SquareVA;
 
-	Changing::Ref<Changing::Texture2D> m_Texture;
+	Changing::Ref<Changing::Texture2D> m_Texture, m_LogoTexture;
 
 	Changing::OrthographicCamera m_Camera;
 	glm::vec3 m_CameraPosition;
