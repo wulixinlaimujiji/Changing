@@ -57,17 +57,38 @@
     <ClInclude Include="src\Changing.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\Application.h">
-      <Filter>src\Changing</Filter>
+    <ClInclude Include="src\Changing\Core\Application.h">
+      <Filter>src\Changing\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\Core.h">
-      <Filter>src\Changing</Filter>
+    <ClInclude Include="src\Changing\Core\Core.h">
+      <Filter>src\Changing\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Core\EntryPoint.h">
+      <Filter>src\Changing\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Core\Input.h">
+      <Filter>src\Changing\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Core\KeyCodes.h">
+      <Filter>src\Changing\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Core\Layer.h">
+      <Filter>src\Changing\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Core\LayerStack.h">
+      <Filter>src\Changing\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Core\Log.h">
+      <Filter>src\Changing\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Core\MouseButtonCodes.h">
+      <Filter>src\Changing\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Core\Timestep.h">
       <Filter>src\Changing\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\EntryPoint.h">
-      <Filter>src\Changing</Filter>
+    <ClInclude Include="src\Changing\Core\Window.h">
+      <Filter>src\Changing\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Events\ApplicationEvent.h">
       <Filter>src\Changing\Events</Filter>
@@ -84,24 +105,6 @@
     <ClInclude Include="src\Changing\ImGui\ImGuiLayer.h">
       <Filter>src\Changing\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\Input.h">
-      <Filter>src\Changing</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Changing\KeyCodes.h">
-      <Filter>src\Changing</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Changing\Layer.h">
-      <Filter>src\Changing</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Changing\LayerStack.h">
-      <Filter>src\Changing</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Changing\Log.h">
-      <Filter>src\Changing</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Changing\MouseButtonCodes.h">
-      <Filter>src\Changing</Filter>
-    </ClInclude>
     <ClInclude Include="src\Changing\Renderer\Buffer.h">
       <Filter>src\Changing\Renderer</Filter>
     </ClInclude>
@@ -109,6 +112,9 @@
       <Filter>src\Changing\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Renderer\OrthographicCamera.h">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Renderer\OrthographicCameraController.h">
       <Filter>src\Changing\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Renderer\RenderCommand.h">
@@ -128,9 +134,6 @@
     </ClInclude>
     <ClInclude Include="src\Changing\Renderer\VertexArray.h">
       <Filter>src\Changing\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Changing\Window.h">
-      <Filter>src\Changing</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
@@ -1410,13 +1413,19 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\OrthographicCameraController.h">
-      <Filter>src\Changing</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Changing\Application.cpp">
-      <Filter>src\Changing</Filter>
+    <ClCompile Include="src\Changing\Core\Application.cpp">
+      <Filter>src\Changing\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Core\Layer.cpp">
+      <Filter>src\Changing\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Core\LayerStack.cpp">
+      <Filter>src\Changing\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Core\Log.cpp">
+      <Filter>src\Changing\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Changing\ImGui\ImGuiBuild.cpp">
       <Filter>src\Changing\ImGui</Filter>
@@ -1424,19 +1433,13 @@
     <ClCompile Include="src\Changing\ImGui\ImGuiLayer.cpp">
       <Filter>src\Changing\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Changing\Layer.cpp">
-      <Filter>src\Changing</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Changing\LayerStack.cpp">
-      <Filter>src\Changing</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Changing\Log.cpp">
-      <Filter>src\Changing</Filter>
-    </ClCompile>
     <ClCompile Include="src\Changing\Renderer\Buffer.cpp">
       <Filter>src\Changing\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Changing\Renderer\OrthographicCamera.cpp">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Renderer\OrthographicCameraController.cpp">
       <Filter>src\Changing\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Changing\Renderer\RenderCommand.cpp">
@@ -1486,9 +1489,6 @@
     </ClCompile>
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Changing\OrthographicCameraController.cpp">
-      <Filter>src\Changing</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

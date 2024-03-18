@@ -1,7 +1,7 @@
 #include "chngpch.h"
 #include "WindowsInput.h"
 
-#include "Changing/Application.h"
+#include "Changing/Core/Application.h"
 #include <GLFW/glfw3.h>
 
 namespace Changing {

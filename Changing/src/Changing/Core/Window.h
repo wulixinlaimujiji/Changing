@@ -2,7 +2,7 @@
 
 #include "chngpch.h"
 
-#include "Changing/Core.h"
+#include "Changing/Core/Core.h"
 #include "Changing/Events/Event.h"
 
 namespace Changing {

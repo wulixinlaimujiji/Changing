@@ -1,8 +1,8 @@
 #include "chngpch.h"
 #include "OrthographicCameraController.h"
 
-#include "Changing/Input.h"
-#include "Changing/KeyCodes.h"
+#include "Changing/Core/Input.h"
+#include "Changing/Core/KeyCodes.h"
 
 namespace Changing {
 

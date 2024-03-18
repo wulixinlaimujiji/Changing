@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Changing/Input.h"
+#include "Changing/Core/Input.h"
 
 namespace Changing {
 	

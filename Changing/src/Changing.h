@@ -2,16 +2,16 @@
 
 // For use by Changing Applications
 
-#include "Changing/Application.h"
-#include "Changing/Layer.h"
-#include "Changing/Log.h"
+#include "Changing/Core/Application.h"
+#include "Changing/Core/Layer.h"
+#include "Changing/Core/Log.h"
 
 #include "Changing/Core/Timestep.h"
 
-#include "Changing/Input.h"
-#include "Changing/KeyCodes.h"
-#include "Changing/MouseButtonCodes.h"
-#include "Changing/OrthographicCameraController.h"
+#include "Changing/Core/Input.h"
+#include "Changing/Core/KeyCodes.h"
+#include "Changing/Core/MouseButtonCodes.h"
+#include "Changing/Renderer/OrthographicCameraController.h"
 
 #include "Changing/ImGui/ImGuiLayer.h"
 
@@ -28,5 +28,5 @@
 // -----------------------------------
 
 // -------Entry Point--------------
-#include "Changing/EntryPoint.h"
+#include "Changing/Core/EntryPoint.h"
 // --------------------------------

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Changing/Window.h"
+#include "Changing/Core/Window.h"
 #include "Changing/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>

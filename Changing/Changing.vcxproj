@@ -147,33 +147,33 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Changing\OrthographicCameraController.h" />
     <ClInclude Include="src\Changing.h" />
-    <ClInclude Include="src\Changing\Application.h" />
-    <ClInclude Include="src\Changing\Core.h" />
+    <ClInclude Include="src\Changing\Core\Application.h" />
+    <ClInclude Include="src\Changing\Core\Core.h" />
+    <ClInclude Include="src\Changing\Core\EntryPoint.h" />
+    <ClInclude Include="src\Changing\Core\Input.h" />
+    <ClInclude Include="src\Changing\Core\KeyCodes.h" />
+    <ClInclude Include="src\Changing\Core\Layer.h" />
+    <ClInclude Include="src\Changing\Core\LayerStack.h" />
+    <ClInclude Include="src\Changing\Core\Log.h" />
+    <ClInclude Include="src\Changing\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\Changing\Core\Timestep.h" />
-    <ClInclude Include="src\Changing\EntryPoint.h" />
+    <ClInclude Include="src\Changing\Core\Window.h" />
     <ClInclude Include="src\Changing\Events\ApplicationEvent.h" />
     <ClInclude Include="src\Changing\Events\Event.h" />
     <ClInclude Include="src\Changing\Events\KeyEvent.h" />
     <ClInclude Include="src\Changing\Events\MouseEvent.h" />
     <ClInclude Include="src\Changing\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Changing\Input.h" />
-    <ClInclude Include="src\Changing\KeyCodes.h" />
-    <ClInclude Include="src\Changing\Layer.h" />
-    <ClInclude Include="src\Changing\LayerStack.h" />
-    <ClInclude Include="src\Changing\Log.h" />
-    <ClInclude Include="src\Changing\MouseButtonCodes.h" />
     <ClInclude Include="src\Changing\Renderer\Buffer.h" />
     <ClInclude Include="src\Changing\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\Changing\Renderer\OrthographicCamera.h" />
+    <ClInclude Include="src\Changing\Renderer\OrthographicCameraController.h" />
     <ClInclude Include="src\Changing\Renderer\RenderCommand.h" />
     <ClInclude Include="src\Changing\Renderer\Renderer.h" />
     <ClInclude Include="src\Changing\Renderer\RendererAPI.h" />
     <ClInclude Include="src\Changing\Renderer\Shader.h" />
     <ClInclude Include="src\Changing\Renderer\Texture.h" />
     <ClInclude Include="src\Changing\Renderer\VertexArray.h" />
-    <ClInclude Include="src\Changing\Window.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h" />
@@ -602,15 +602,15 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Changing\OrthographicCameraController.cpp" />
-    <ClCompile Include="src\Changing\Application.cpp" />
+    <ClCompile Include="src\Changing\Core\Application.cpp" />
+    <ClCompile Include="src\Changing\Core\Layer.cpp" />
+    <ClCompile Include="src\Changing\Core\LayerStack.cpp" />
+    <ClCompile Include="src\Changing\Core\Log.cpp" />
     <ClCompile Include="src\Changing\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Changing\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Changing\Layer.cpp" />
-    <ClCompile Include="src\Changing\LayerStack.cpp" />
-    <ClCompile Include="src\Changing\Log.cpp" />
     <ClCompile Include="src\Changing\Renderer\Buffer.cpp" />
     <ClCompile Include="src\Changing\Renderer\OrthographicCamera.cpp" />
+    <ClCompile Include="src\Changing\Renderer\OrthographicCameraController.cpp" />
     <ClCompile Include="src\Changing\Renderer\RenderCommand.cpp" />
     <ClCompile Include="src\Changing\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Changing\Renderer\RendererAPI.cpp" />

@@ -1,7 +1,7 @@
 #include "chngpch.h"
 #include "Application.h"
 
-#include "Changing/Log.h"
+#include "Changing/Core/Log.h"
 
 #include "Changing/Renderer/Renderer.h"
 

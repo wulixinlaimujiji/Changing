@@ -13,7 +13,7 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "Changing/Log.h"
+#include "Changing/Core/Log.h"
 
 #ifdef CHNG_PLATFORM_WINDOWS
 	#include <Windows.h>

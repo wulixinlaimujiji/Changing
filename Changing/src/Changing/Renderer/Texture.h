@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "Changing/Core.h"
+#include "Changing/Core/Core.h"
 
 namespace Changing {
 
