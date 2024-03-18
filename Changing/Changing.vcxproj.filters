@@ -1395,6 +1395,9 @@
     <ClInclude Include="src\Changing\Core\Timestep.h">
       <Filter>src\Changing\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Application.cpp">
@@ -1456,6 +1459,9 @@
     </ClCompile>
     <ClCompile Include="src\Changing\Renderer\OrthographicCamera.cpp">
       <Filter>src\Changing\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
