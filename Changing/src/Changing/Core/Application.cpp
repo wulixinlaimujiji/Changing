@@ -49,6 +49,11 @@ namespace Changing {
 		layer->OnAttach();
 	}
 
+	void Application::Close()
+	{
+		m_Running = false;
+	}
+
 	void Application::OnEvent(Event& e)
 	{
 		CHNG_PROFILE_FUNCTION();
