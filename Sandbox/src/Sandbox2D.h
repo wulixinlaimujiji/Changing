@@ -19,7 +19,6 @@ private:
 
 	Changing::Ref<Changing::VertexArray> m_SquareVA;
 	Changing::Ref<Changing::Shader> m_FlatColorShader;
-	Changing::Ref<Changing::Framebuffer> m_Framebuffer;
 
 	Changing::Ref<Changing::Texture2D> m_CheckerboardTexture;
 

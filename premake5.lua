@@ -1,6 +1,6 @@
 workspace "Changing"
 	architecture "x86_64"
-	startproject "Sandbox"
+	startproject "ChangingShow"
 
 	configurations
 	{
@@ -103,6 +103,53 @@ project "Changing"
 
 project "Sandbox"
 	location "Sandbox"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp"
+	}
+
+	includedirs
+	{
+		"Changing/vendor/spdlog/include",
+		"Changing/src",
+		"Changing/vendor",
+		"%{IncludeDir.glm}"
+	}
+
+	links
+	{
+		"Changing"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+	filter "configurations:Debug"
+		defines "CHNG_DEBUG"
+		runtime "Debug"
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "CHNG_RELEASE"
+		runtime "Release"
+		optimize "on"
+
+	filter "configurations:Dist"
+		defines "CHNG_DIST"
+		runtime "Release"
+		optimize "on"
+
+project "ChangingShow"
+	location "ChangingShow"
 	kind "ConsoleApp"
 	language "C++"
 	cppdialect "C++17"

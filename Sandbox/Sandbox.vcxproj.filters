@@ -5,13 +5,13 @@
       <UniqueIdentifier>{5b3a420d-7faa-4494-9556-c494d6f25c5d}</UniqueIdentifier>
     </Filter>
     <Filter Include="assets">
-      <UniqueIdentifier>{7a7142ad-9a57-4c63-8cea-11e78149e675}</UniqueIdentifier>
+      <UniqueIdentifier>{46948501-fa2a-4aff-8f20-21006641acd3}</UniqueIdentifier>
     </Filter>
     <Filter Include="assets\textures">
-      <UniqueIdentifier>{e5d278ad-5dbb-41b1-99c2-7bea6eed45b9}</UniqueIdentifier>
+      <UniqueIdentifier>{da8cfd21-56d4-4d08-83a0-fc6969c6ccb3}</UniqueIdentifier>
     </Filter>
     <Filter Include="assets\shaders">
-      <UniqueIdentifier>{dde41005-e3f3-480b-a5bd-3636904a6396}</UniqueIdentifier>
+      <UniqueIdentifier>{9831ab03-bc90-4df4-b85b-48131ab5f97c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

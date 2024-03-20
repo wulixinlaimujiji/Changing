@@ -114,6 +114,9 @@
     <ClInclude Include="src\Changing\Renderer\Buffer.h">
       <Filter>src\Changing\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Changing\Renderer\Framebuffer.h">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="src\Changing\Renderer\GraphicsContext.h">
       <Filter>src\Changing\Renderer</Filter>
     </ClInclude>
@@ -148,6 +151,9 @@
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLRendererAPI.h">
@@ -1422,12 +1428,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\Renderer\Framebuffer.h">
-      <Filter>src\Changing\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h">
-      <Filter>src\Platform\OpenGL</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Core\Application.cpp">
@@ -1455,6 +1455,9 @@
       <Filter>src\Changing\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Changing\Renderer\Buffer.cpp">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Renderer\Framebuffer.cpp">
       <Filter>src\Changing\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="src\Changing\Renderer\GraphicsContext.cpp">
@@ -1493,6 +1496,9 @@
     <ClCompile Include="src\Platform\OpenGL\OpenGLContext.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp">
+      <Filter>src\Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLRendererAPI.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1516,12 +1522,6 @@
     </ClCompile>
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Changing\Renderer\Framebuffer.cpp">
-      <Filter>src\Changing\Renderer</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp">
-      <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
