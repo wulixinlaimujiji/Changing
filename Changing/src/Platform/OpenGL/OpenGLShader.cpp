@@ -23,6 +23,8 @@ namespace Changing {
 	}
 	OpenGLShader::OpenGLShader(const std::string& filepath)
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		std::string source = ReadFile(filepath);
 		auto shaderSources = PreProcess(source);
 		Compile(shaderSources);
@@ -36,6 +38,8 @@ namespace Changing {
 	OpenGLShader::OpenGLShader(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
 		: m_Name(name)
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		std::unordered_map<GLenum, std::string> sources;
 		sources[GL_VERTEX_SHADER] = vertexSrc;
 		sources[GL_FRAGMENT_SHADER] = fragmentSrc;
@@ -43,11 +47,15 @@ namespace Changing {
 	}
 	OpenGLShader::~OpenGLShader()
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		glDeleteProgram(m_RendererID);
 	}
 
 	std::string OpenGLShader::ReadFile(const std::string& filepath)
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		std::string result;
 		std::ifstream in(filepath, std::ios::in | std::ios::binary);
 		if (in)
@@ -70,6 +78,8 @@ namespace Changing {
 	}
 	std::unordered_map<GLenum, std::string> OpenGLShader::PreProcess(const std::string& source)
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		std::unordered_map<GLenum, std::string> shaderSources;
 
 		const char* typeToken = "#type";
@@ -94,6 +104,8 @@ namespace Changing {
 	}
 	void OpenGLShader::Compile(const std::unordered_map<GLenum, std::string>& shaderSources)
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		GLuint program = glCreateProgram();
 		CHNG_CORE_ASSERT(shaderSources.size() <= 2, "We only support 2 shaders for now");
 		std::array<GLenum, 2> glShaderIDs;
@@ -166,27 +178,39 @@ namespace Changing {
 
 	void OpenGLShader::Bind() const
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		glUseProgram(m_RendererID);
 	}
 	void OpenGLShader::Unbind() const
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		glUseProgram(0);
 	}
 
 	void OpenGLShader::SetInt(const std::string& name, int value)
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		UploadUniformInt(name, value);
 	}
 	void OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		UploadUniformFloat3(name, value);
 	}
 	void OpenGLShader::SetFloat4(const std::string& name, const glm::vec4& value)
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		UploadUniformFloat4(name, value);
 	}
 	void OpenGLShader::SetMat4(const std::string& name, const glm::mat4& value)
 	{
+		CHNG_PROFILE_FUNCTION();
+
 		UploadUniformMat4(name, value);
 	}
 

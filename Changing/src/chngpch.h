@@ -15,6 +15,8 @@
 
 #include "Changing/Core/Log.h"
 
+#include "Changing/Debug/Instrumentor.h"
+
 #ifdef CHNG_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
