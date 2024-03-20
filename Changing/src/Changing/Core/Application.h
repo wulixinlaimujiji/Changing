@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Core.h"
+#include "Changing/Core/Core.h"
 
-#include "Window.h"
+#include "Changing/Core/Window.h"
 #include "Changing/Core/LayerStack.h"
 #include "Changing/Events/Event.h"
 #include "Changing/Events/ApplicationEvent.h"
@@ -17,7 +17,7 @@ namespace Changing {
 	{
 	public:
 		Application();
-		virtual ~Application() = default;
+		virtual ~Application();
 	
 		void Run();
 

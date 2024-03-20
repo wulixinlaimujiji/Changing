@@ -1,8 +1,8 @@
 #pragma once
 
-#include "OrthographicCamera.h"
+#include "Changing/Renderer/OrthographicCamera.h"
 
-#include "Texture.h"
+#include "Changing/Renderer/Texture.h"
 
 namespace Changing {
 

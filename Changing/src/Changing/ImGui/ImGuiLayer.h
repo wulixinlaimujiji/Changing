@@ -8,7 +8,7 @@
 
 namespace Changing {
 
-	class CHANGING_API ImGuiLayer : public Layer
+	class ImGuiLayer : public Layer
 	{
 	public:
 		ImGuiLayer();

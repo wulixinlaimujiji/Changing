@@ -1,7 +1,7 @@
 #include "chngpch.h"
-#include "Texture.h"
+#include "Changing/Renderer/Texture.h"
 
-#include "Renderer.h"
+#include "Changing/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLTexture.h"
 
 namespace Changing {
@@ -10,20 +10,19 @@ namespace Changing {
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::API::None:    CHNG_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL:  return CreateRef<OpenGLTexture2D>(width, height);
+			case RendererAPI::API::None:    CHNG_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+			case RendererAPI::API::OpenGL:  return CreateRef<OpenGLTexture2D>(width, height);
 		}
 
 		CHNG_CORE_ASSERT(false, "Unknown RendererAPI!");
 		return nullptr;
 	}
-
 	Ref<Texture2D> Texture2D::Create(const std::string& path)
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::API::None:    CHNG_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL:  return CreateRef<OpenGLTexture2D>(path);
+			case RendererAPI::API::None:    CHNG_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+			case RendererAPI::API::OpenGL:  return CreateRef<OpenGLTexture2D>(path);
 		}
 
 		CHNG_CORE_ASSERT(false, "Unknown RendererAPI!");

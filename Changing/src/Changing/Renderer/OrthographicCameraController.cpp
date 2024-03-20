@@ -1,5 +1,5 @@
 #include "chngpch.h"
-#include "OrthographicCameraController.h"
+#include "Changing/Renderer/OrthographicCameraController.h"
 
 #include "Changing/Core/Input.h"
 #include "Changing/Core/KeyCodes.h"
@@ -13,20 +13,24 @@ namespace Changing {
 	{
 		if (Input::IsKeyPressed(CHNG_KEY_A))
 		{
-			m_CameraPosition.x -= m_CameraTranslationSpeed * ts;
+			m_CameraPosition.x -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y -= sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 		}
 		else if (Input::IsKeyPressed(CHNG_KEY_D))
 		{
-			m_CameraPosition.x += m_CameraTranslationSpeed * ts;
+			m_CameraPosition.x += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y += sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 		}
 
 		if (Input::IsKeyPressed(CHNG_KEY_W))
 		{
-			m_CameraPosition.y += m_CameraTranslationSpeed * ts;
+			m_CameraPosition.x += -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y += cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 		}
 		else if (Input::IsKeyPressed(CHNG_KEY_S))
 		{
-			m_CameraPosition.y -= m_CameraTranslationSpeed * ts;
+			m_CameraPosition.x -= -sin(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
+			m_CameraPosition.y -= cos(glm::radians(m_CameraRotation)) * m_CameraTranslationSpeed * ts;
 		}
 
 		if (m_Rotation)
@@ -38,6 +42,15 @@ namespace Changing {
 			if (Input::IsKeyPressed(CHNG_KEY_E))
 			{
 				m_CameraRotation -= m_CameraRotationSpeed * ts;
+			}
+
+			if (m_CameraRotation > 180.0f)
+			{
+				m_CameraRotation -= 360.0f;
+			}
+			else if (m_CameraRotation <= -180.0f)
+			{
+				m_CameraRotation += 360.0f;
 			}
 
 			m_Camera.SetRotation(m_CameraRotation);

@@ -1,5 +1,4 @@
 #pragma once
-
 #include "chngpch.h"
 
 #include "Changing/Core/Core.h"
@@ -17,7 +16,7 @@ namespace Changing {
 			: Title(title), Width(width), Height(height) {}
 	};
 
-	class CHANGING_API Window
+	class Window
 	{
 	public:
 		using EventCallbackFn = std::function<void(Event&)>;
@@ -35,7 +34,7 @@ namespace Changing {
 
 		virtual void* GetNativeWindow() const = 0;
 
-		static Window* Create(const WindowProps& props = WindowProps());
+		static Scope<Window> Create(const WindowProps& props = WindowProps());
 	};
 
 }

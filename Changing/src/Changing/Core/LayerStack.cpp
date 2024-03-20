@@ -1,9 +1,8 @@
 #include "chngpch.h"
-#include "LayerStack.h"
+#include "Changing/Core/LayerStack.h"
 
 namespace Changing {
 
-	LayerStack::LayerStack() {}
 	LayerStack::~LayerStack()
 	{
 		for (Layer* layer : m_Layers)

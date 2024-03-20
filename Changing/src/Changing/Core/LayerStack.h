@@ -1,14 +1,16 @@
 #pragma once
 
 #include "Changing/Core/Core.h"
-#include "Layer.h"
+#include "Changing/Core/Layer.h"
+
+#include <vector>
 
 namespace Changing {
 
-	class CHANGING_API LayerStack
+	class LayerStack
 	{
 	public:
-		LayerStack();
+		LayerStack() = default;
 		~LayerStack();
 
 		void PushLayer(Layer* layer);

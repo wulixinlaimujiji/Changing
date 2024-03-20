@@ -83,7 +83,6 @@ project "Changing"
 
 		defines
 		{
-			"CHNG_PLATFORM_WINDOWS",
 			"CHNG_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
@@ -134,11 +133,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		systemversion "latest"
-
-		defines
-		{
-			"CHNG_PLATFORM_WINDOWS"
-		}
 
 	filter "configurations:Debug"
 		defines "CHNG_DEBUG"

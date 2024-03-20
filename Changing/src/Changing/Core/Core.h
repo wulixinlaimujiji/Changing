@@ -43,22 +43,6 @@
 	#error "Unknown platform!"
 #endif // End of platform detection
 
-
-// DLL support
-#ifdef CHNG_PLATFORM_WINDOWS
-	#if CHNG_DYNAMIC_LINK
-		#ifdef CHNG_BUILD_DLL
-			#define CHANGING_API __declspec(dllexport)
-		#else
-			#define CHANGING_API __declspec(dllimport)
-		#endif
-	#else
-		#define CHANGING_API
-	#endif
-#else
-	#error CHANGING only supports Windows!
-#endif // End of DLL support
-
 #ifdef CHNG_DEBUG
 	#define CHNG_ENABLE_ASSERTS
 #endif

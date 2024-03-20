@@ -2,6 +2,8 @@
 
 // For use by Changing Applications
 
+#include "Changing/Core/Core.h"
+
 #include "Changing/Core/Application.h"
 #include "Changing/Core/Layer.h"
 #include "Changing/Core/Log.h"

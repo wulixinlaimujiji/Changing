@@ -1,5 +1,5 @@
 #include "chngpch.h"
-#include "Shader.h"
+#include "Changing/Renderer/Shader.h"
 
 #include "Renderer.h"
 #include "Platform/OpenGL/OpenGLShader.h"
@@ -10,20 +10,19 @@ namespace Changing {
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::API::None:    CHNG_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLShader>(filepath);
+			case RendererAPI::API::None:    CHNG_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+			case RendererAPI::API::OpenGL:  return CreateRef<OpenGLShader>(filepath);
 		}
 
 		CHNG_CORE_ASSERT(false, "Unknown RendererAPI!");
 		return nullptr;
 	}
-
 	Ref<Shader> Shader::Create(const std::string& name, const std::string& vertexSrc, const std::string& fragmentSrc)
 	{
 		switch (Renderer::GetAPI())
 		{
-		case RendererAPI::API::None:    CHNG_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
-		case RendererAPI::API::OpenGL:  return std::make_shared<OpenGLShader>(name, vertexSrc, fragmentSrc);
+			case RendererAPI::API::None:    CHNG_CORE_ASSERT(false, "RendererAPI::None is currently not supported!"); return nullptr;
+			case RendererAPI::API::OpenGL:  CreateRef<OpenGLShader>(name, vertexSrc, fragmentSrc);
 		}
 
 		CHNG_CORE_ASSERT(false, "Unknown RendererAPI!");
@@ -35,7 +34,6 @@ namespace Changing {
 		CHNG_CORE_ASSERT(!Exists(name), "Shader already exists!");
 		m_Shaders[name] = shader;
 	}
-
 	void ShaderLibrary::Add(const Ref<Shader>& shader)
 	{
 		auto& name = shader->GetName();
@@ -48,7 +46,6 @@ namespace Changing {
 		Add(shader);
 		return shader;
 	}
-
 	Changing::Ref<Changing::Shader> ShaderLibrary::Load(const std::string& name, const std::string& filepath)
 	{
 		auto shader = Shader::Create(filepath);

@@ -6,7 +6,7 @@
 
 namespace Changing {
 	
-	class CHANGING_API Layer
+	class Layer
 	{
 	public:
 		Layer(const std::string& debugname = "Layer");

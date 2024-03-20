@@ -1,6 +1,6 @@
 #pragma once
-
 #include "chngpch.h"
+
 #include "Changing/Core/Core.h"
 
 namespace Changing {
@@ -29,7 +29,7 @@ namespace Changing {
                                virtual const char* GetName() const override { return #type; }
 	#define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
-	class CHANGING_API Event
+	class Event
 	{
 	public:
 		bool Handled = false;
@@ -48,7 +48,8 @@ namespace Changing {
 	class EventDispatcher
 	{
 	public:
-		EventDispatcher(Event& event) : m_Event(event) {}
+		EventDispatcher(Event& event)
+			: m_Event(event) {}
 
 		template<typename T, typename F>
 		bool Dispatch(const F& func)

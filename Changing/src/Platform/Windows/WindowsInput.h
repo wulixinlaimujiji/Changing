@@ -13,4 +13,5 @@ namespace Changing {
 		virtual float GetMouseXImpl() override;
 		virtual float GetMouseYImpl() override;
 	};
+
 }

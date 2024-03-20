@@ -1,4 +1,5 @@
 #pragma once
+#include "Changing/Core/Core.h"
 
 #ifdef CHNG_PLATFORM_WINDOWS
 
