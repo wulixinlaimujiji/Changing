@@ -184,7 +184,6 @@
     <ClInclude Include="src\Platform\OpenGL\OpenGLShader.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLTexture.h" />
     <ClInclude Include="src\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\chngpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -607,7 +606,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Core\Application.cpp" />
-    <ClCompile Include="src\Changing\Core\Input.cpp" />
     <ClCompile Include="src\Changing\Core\Layer.cpp" />
     <ClCompile Include="src\Changing\Core\LayerStack.cpp" />
     <ClCompile Include="src\Changing\Core\Log.cpp" />

@@ -17,7 +17,7 @@ int main(int argc, char** argv)
 	app->Run();
 	CHNG_PROFILE_END_SESSION();
 
-	CHNG_PROFILE_BEGIN_SESSION("Startup", "ChangingProfile-Shutdown.json");
+	CHNG_PROFILE_BEGIN_SESSION("Shutdown", "ChangingProfile-Shutdown.json");
 	delete app;
 	CHNG_PROFILE_END_SESSION();
 }
