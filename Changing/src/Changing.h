@@ -12,7 +12,7 @@
 
 #include "Changing/Core/Input.h"
 #include "Changing/Core/KeyCodes.h"
-#include "Changing/Core/MouseButtonCodes.h"
+#include "Changing/Core/MouseCodes.h"
 #include "Changing/Renderer/OrthographicCameraController.h"
 
 #include "Changing/ImGui/ImGuiLayer.h"

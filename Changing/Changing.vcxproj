@@ -156,7 +156,7 @@
     <ClInclude Include="src\Changing\Core\Layer.h" />
     <ClInclude Include="src\Changing\Core\LayerStack.h" />
     <ClInclude Include="src\Changing\Core\Log.h" />
-    <ClInclude Include="src\Changing\Core\MouseButtonCodes.h" />
+    <ClInclude Include="src\Changing\Core\MouseCodes.h" />
     <ClInclude Include="src\Changing\Core\Timestep.h" />
     <ClInclude Include="src\Changing\Core\Window.h" />
     <ClInclude Include="src\Changing\Debug\Instrumentor.h" />
@@ -608,6 +608,8 @@
     <ClCompile Include="src\Changing\Core\Layer.cpp" />
     <ClCompile Include="src\Changing\Core\LayerStack.cpp" />
     <ClCompile Include="src\Changing\Core\Log.cpp" />
+    <ClCompile Include="src\Changing\Debug\Input.cpp" />
+    <ClCompile Include="src\Changing\Debug\Window.cpp" />
     <ClCompile Include="src\Changing\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Changing\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\Changing\Renderer\Buffer.cpp" />

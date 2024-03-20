@@ -84,7 +84,7 @@
     <ClInclude Include="src\Changing\Core\Log.h">
       <Filter>src\Changing\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\Core\MouseButtonCodes.h">
+    <ClInclude Include="src\Changing\Core\MouseCodes.h">
       <Filter>src\Changing\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Core\Timestep.h">
@@ -1504,6 +1504,12 @@
     </ClCompile>
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Debug\Input.cpp">
+      <Filter>src\Changing\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Debug\Window.cpp">
+      <Filter>src\Changing\Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
