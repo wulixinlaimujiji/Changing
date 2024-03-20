@@ -47,7 +47,7 @@ namespace Changing {
 		{
 			CHNG_PROFILE_SCOPE("glfwInit");
 			int success = glfwInit();
-			CHNG_CORE_ASSERT(success, "Could not intialize GLFW!");
+			CHNG_CORE_ASSERT(success, "Could not initialize GLFW!");
 			glfwSetErrorCallback(GLFWErrorCallback);
 		}
 
