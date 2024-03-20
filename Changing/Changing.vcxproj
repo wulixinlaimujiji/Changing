@@ -147,6 +147,8 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\OpenGLFramebuffer.h" />
+    <ClInclude Include="src\Changing\Renderer\Framebuffer.h" />
     <ClInclude Include="src\Changing.h" />
     <ClInclude Include="src\Changing\Core\Application.h" />
     <ClInclude Include="src\Changing\Core\Base.h" />
@@ -604,6 +606,8 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\OpenGLFramebuffer.cpp" />
+    <ClCompile Include="src\Changing\Renderer\Framebuffer.cpp" />
     <ClCompile Include="src\Changing\Core\Application.cpp" />
     <ClCompile Include="src\Changing\Core\Input.cpp" />
     <ClCompile Include="src\Changing\Core\Layer.cpp" />

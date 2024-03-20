@@ -24,6 +24,7 @@
 
 #include "Changing/Renderer/Buffer.h"
 #include "Changing/Renderer/Shader.h"
+#include "Changing/Renderer/Framebuffer.h"
 #include "Changing/Renderer/Texture.h"
 #include "Changing/Renderer/VertexArray.h"
 
