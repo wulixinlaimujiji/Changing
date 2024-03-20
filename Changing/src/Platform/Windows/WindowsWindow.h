@@ -10,7 +10,6 @@ namespace Changing {
 	class WindowsWindow : public Window
 	{
 	public:
-
 		WindowsWindow(const WindowProps& props);
 		virtual ~WindowsWindow();
 
@@ -39,7 +38,6 @@ namespace Changing {
 
 			EventCallbackFn EventCallback;
 		};
-
 		WindowData m_Data;
 	};
 

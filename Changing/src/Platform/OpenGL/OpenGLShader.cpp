@@ -21,6 +21,7 @@ namespace Changing {
 		CHNG_CORE_ASSERT(false, "Unknown shader type!");
 		return 0;
 	}
+
 	OpenGLShader::OpenGLShader(const std::string& filepath)
 	{
 		CHNG_PROFILE_FUNCTION();

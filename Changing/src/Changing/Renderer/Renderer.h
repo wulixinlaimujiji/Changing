@@ -26,7 +26,6 @@ namespace Changing {
 		{
 			glm::mat4 ViewProjectionMatrix;
 		};
-
 		static Scope<SceneData> s_SceneData;
 	};
 

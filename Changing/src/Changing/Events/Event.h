@@ -1,7 +1,7 @@
 #pragma once
 #include "chngpch.h"
 
-#include "Changing/Core/Core.h"
+#include "Changing/Core/Base.h"
 
 namespace Changing {
 

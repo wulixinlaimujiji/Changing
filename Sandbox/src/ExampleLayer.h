@@ -22,7 +22,7 @@ private:
 	Changing::Ref<Changing::Shader> m_FlatColorShader;
 	Changing::Ref<Changing::VertexArray> m_SquareVA;
 
-	Changing::Ref<Changing::Texture2D> m_Texture, m_ChernoLogoTexture;
+	Changing::Ref<Changing::Texture2D> m_Texture, m_LogoTexture;
 
 	Changing::OrthographicCameraController m_CameraController;
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };

@@ -53,10 +53,13 @@ ExampleLayer::ExampleLayer()
 			
 			layout(location = 0) in vec3 a_Position;
 			layout(location = 1) in vec4 a_Color;
+
 			uniform mat4 u_ViewProjection;
 			uniform mat4 u_Transform;
+
 			out vec3 v_Position;
 			out vec4 v_Color;
+
 			void main()
 			{
 				v_Position = a_Position;
@@ -69,8 +72,10 @@ ExampleLayer::ExampleLayer()
 			#version 330 core
 			
 			layout(location = 0) out vec4 color;
+
 			in vec3 v_Position;
 			in vec4 v_Color;
+
 			void main()
 			{
 				color = vec4(v_Position * 0.5 + 0.5, 1.0);
@@ -84,9 +89,12 @@ ExampleLayer::ExampleLayer()
 			#version 330 core
 			
 			layout(location = 0) in vec3 a_Position;
+
 			uniform mat4 u_ViewProjection;
 			uniform mat4 u_Transform;
+
 			out vec3 v_Position;
+
 			void main()
 			{
 				v_Position = a_Position;
@@ -98,9 +106,11 @@ ExampleLayer::ExampleLayer()
 			#version 330 core
 			
 			layout(location = 0) out vec4 color;
+
 			in vec3 v_Position;
 			
 			uniform vec3 u_Color;
+
 			void main()
 			{
 				color = vec4(u_Color, 1.0);
@@ -112,26 +122,19 @@ ExampleLayer::ExampleLayer()
 	auto textureShader = m_ShaderLibrary.Load("assets/shaders/Texture.glsl");
 
 	m_Texture = Changing::Texture2D::Create("assets/textures/Checkerboard.png");
-	m_ChernoLogoTexture = Changing::Texture2D::Create("assets/textures/ChernoLogo.png");
+	m_LogoTexture = Changing::Texture2D::Create("assets/textures/Logo.png");
 
 	textureShader->Bind();
 	textureShader->SetInt("u_Texture", 0);
 }
 
-void ExampleLayer::OnAttach()
-{
-}
-
-void ExampleLayer::OnDetach()
-{
-}
+void ExampleLayer::OnAttach() {}
+void ExampleLayer::OnDetach() {}
 
 void ExampleLayer::OnUpdate(Changing::Timestep ts)
 {
-	// Update
 	m_CameraController.OnUpdate(ts);
 
-	// Render
 	Changing::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 	Changing::RenderCommand::Clear();
 
@@ -156,22 +159,17 @@ void ExampleLayer::OnUpdate(Changing::Timestep ts)
 
 	m_Texture->Bind();
 	Changing::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
-	m_ChernoLogoTexture->Bind();
+	m_LogoTexture->Bind();
 	Changing::Renderer::Submit(textureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
-
-	// Triangle
-	// Changing::Renderer::Submit(m_Shader, m_VertexArray);
 
 	Changing::Renderer::EndScene();
 }
-
 void ExampleLayer::OnImGuiRender()
 {
 	ImGui::Begin("Settings");
 	ImGui::ColorEdit3("Square Color", glm::value_ptr(m_SquareColor));
 	ImGui::End();
 }
-
 void ExampleLayer::OnEvent(Changing::Event& e)
 {
 	m_CameraController.OnEvent(e);

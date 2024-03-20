@@ -1,5 +1,5 @@
 #pragma once
-#include "Changing/Core/Core.h"
+#include "Changing/Core/Base.h"
 
 #ifdef CHNG_PLATFORM_WINDOWS
 

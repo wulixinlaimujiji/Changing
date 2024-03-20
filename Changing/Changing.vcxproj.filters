@@ -10,6 +10,9 @@
     <Filter Include="src\Changing\Core">
       <UniqueIdentifier>{33A0ED9D-9FB6-EB33-E82D-77555483BCBB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Changing\Debug">
+      <UniqueIdentifier>{B101AE5B-9DE5-6EB1-0646-6904F2485933}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Changing\Events">
       <UniqueIdentifier>{7F8AF8D4-EBEB-D5E2-7459-1C95E0B90CA2}</UniqueIdentifier>
     </Filter>
@@ -52,9 +55,6 @@
     <Filter Include="vendor\stb_image">
       <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Changing\Debug">
-      <UniqueIdentifier>{8bfaf7ff-bb25-4493-8dba-52d296d3d017}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Changing.h">
@@ -63,7 +63,7 @@
     <ClInclude Include="src\Changing\Core\Application.h">
       <Filter>src\Changing\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\Core\Core.h">
+    <ClInclude Include="src\Changing\Core\Base.h">
       <Filter>src\Changing\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Core\EntryPoint.h">
@@ -92,6 +92,9 @@
     </ClInclude>
     <ClInclude Include="src\Changing\Core\Window.h">
       <Filter>src\Changing\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Debug\Instrumentor.h">
+      <Filter>src\Changing\Debug</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Events\ApplicationEvent.h">
       <Filter>src\Changing\Events</Filter>
@@ -1419,12 +1422,12 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\Debug\Instrumentor.h">
-      <Filter>src\Changing\Debug</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Core\Application.cpp">
+      <Filter>src\Changing\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Core\Input.cpp">
       <Filter>src\Changing\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Changing\Core\Layer.cpp">
@@ -1434,6 +1437,9 @@
       <Filter>src\Changing\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Changing\Core\Log.cpp">
+      <Filter>src\Changing\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Core\Window.cpp">
       <Filter>src\Changing\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\Changing\ImGui\ImGuiBuild.cpp">
@@ -1504,12 +1510,6 @@
     </ClCompile>
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Changing\Debug\Input.cpp">
-      <Filter>src\Changing\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Changing\Debug\Window.cpp">
-      <Filter>src\Changing\Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
