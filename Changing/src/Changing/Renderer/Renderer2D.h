@@ -4,6 +4,8 @@
 
 #include "Changing/Renderer/Texture.h"
 
+#include "Changing/Renderer/Camera.h"
+
 namespace Changing {
 
 	class Renderer2D
@@ -13,6 +15,7 @@ namespace Changing {
 		static void Shutdown();
 
 		static void BeginScene(const OrthographicCamera& camera);
+		static void BeginScene(const Camera& camera, const glm::mat4& transform);
 		static void EndScene();
 		static void Flush();
 
