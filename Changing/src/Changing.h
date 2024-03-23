@@ -19,6 +19,7 @@
 
 #include "Changing/Scene/Scene.h"
 #include "Changing/Scene/Entity.h"
+#include "Changing/Scene/ScriptableEntity.h"
 #include "Changing/Scene/Components.h"
 
 // ---Renderer------------------------

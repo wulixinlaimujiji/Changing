@@ -1443,6 +1443,9 @@
     <ClInclude Include="src\Changing\Scene\SceneCamera.h">
       <Filter>src\Changing\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\Changing\Scene\ScriptableEntity.h">
+      <Filter>src\Changing\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Core\Application.cpp">
