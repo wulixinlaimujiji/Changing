@@ -1,5 +1,6 @@
 #pragma once
-#include "chngpch.h"
+
+#include <sstream>
 
 #include "Changing/Core/Base.h"
 #include "Changing/Events/Event.h"

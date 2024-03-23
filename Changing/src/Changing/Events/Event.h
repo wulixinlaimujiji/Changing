@@ -1,5 +1,7 @@
 #pragma once
-#include "chngpch.h"
+#include <functional>
+
+#include "Changing/Debug/Instrumentor.h"
 
 #include "Changing/Core/Base.h"
 

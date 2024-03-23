@@ -90,6 +90,9 @@
     <ClInclude Include="src\Changing\Core\MouseCodes.h">
       <Filter>src\Changing\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Changing\Core\PlatformDetection.h">
+      <Filter>src\Changing\Core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Changing\Core\Timestep.h">
       <Filter>src\Changing\Core</Filter>
     </ClInclude>
@@ -115,6 +118,9 @@
       <Filter>src\Changing\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Renderer\Buffer.h">
+      <Filter>src\Changing\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Renderer\Camera.h">
       <Filter>src\Changing\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Renderer\Framebuffer.h">
@@ -157,6 +163,12 @@
       <Filter>src\Changing\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Scene\Scene.h">
+      <Filter>src\Changing\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Scene\SceneCamera.h">
+      <Filter>src\Changing\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Scene\ScriptableEntity.h">
       <Filter>src\Changing\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
@@ -1437,15 +1449,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\Renderer\Camera.h">
-      <Filter>src\Changing\Renderer</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Changing\Scene\SceneCamera.h">
-      <Filter>src\Changing\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Changing\Scene\ScriptableEntity.h">
-      <Filter>src\Changing\Scene</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Core\Application.cpp">
@@ -1511,6 +1514,9 @@
     <ClCompile Include="src\Changing\Scene\Scene.cpp">
       <Filter>src\Changing\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\Changing\Scene\SceneCamera.cpp">
+      <Filter>src\Changing\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1543,9 +1549,6 @@
     </ClCompile>
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Changing\Scene\SceneCamera.cpp">
-      <Filter>src\Changing\Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
