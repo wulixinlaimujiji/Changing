@@ -23,6 +23,7 @@ IncludeDir["Glad"] = "Changing/vendor/Glad/include"
 IncludeDir["ImGui"] = "Changing/vendor/imgui"
 IncludeDir["glm"] = "Changing/vendor/glm"
 IncludeDir["stb_image"] = "Changing/vendor/stb_image"
+IncludeDir["entt"] = "Changing/vendor/entt/include"
 
 group "Dependencies"
 	include "Changing/vendor/GLFW"
@@ -68,7 +69,8 @@ project "Changing"
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.stb_image}"
+		"%{IncludeDir.stb_image}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -122,7 +124,8 @@ project "Sandbox"
 		"Changing/vendor/spdlog/include",
 		"Changing/src",
 		"Changing/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links
@@ -169,7 +172,8 @@ project "ChangingShow"
 		"Changing/vendor/spdlog/include",
 		"Changing/src",
 		"Changing/vendor",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}"
 	}
 
 	links

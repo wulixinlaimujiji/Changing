@@ -27,13 +27,9 @@ namespace Changing {
 
 	class Instrumentor
 	{
-	private:
-		std::mutex m_Mutex;
-		InstrumentationSession* m_CurrentSession;
-		std::ofstream m_OutputStream;
 	public:
-		Instrumentor()
-			: m_CurrentSession(nullptr)	{}
+		Instrumentor(const Instrumentor&) = delete;
+		Instrumentor(Instrumentor&&) = delete;
 
 		void BeginSession(const std::string& name, const std::string& filepath = "results.json")
 		{
@@ -96,6 +92,13 @@ namespace Changing {
 			return instance;
 		}
 	private:
+		Instrumentor()
+			: m_CurrentSession(nullptr) {}
+		~Instrumentor()
+		{
+			EndSession();
+		}
+
 		void WriteHeader()
 		{
 			m_OutputStream << "{\"otherData\": {},\"traceEvents\":[{}";
@@ -118,6 +121,10 @@ namespace Changing {
 				m_CurrentSession = nullptr;
 			}
 		}
+	private:
+		std::mutex m_Mutex;
+		InstrumentationSession* m_CurrentSession;
+		std::ofstream m_OutputStream;
 	};
 
 	class InstrumentationTimer
@@ -209,8 +216,10 @@ namespace Changing {
 
 	#define CHNG_PROFILE_BEGIN_SESSION(name, filepath) ::Changing::Instrumentor::Get().BeginSession(name, filepath)
 	#define CHNG_PROFILE_END_SESSION() ::Changing::Instrumentor::Get().EndSession()
-	#define CHNG_PROFILE_SCOPE(name) constexpr auto fixedName = ::Changing::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
-									::Changing::InstrumentationTimer timer##__LINE__(fixedName.Data)
+	#define CHNG_PROFILE_SCOPE_LINE2(name, line) constexpr auto fixedName##line = ::Changing::InstrumentorUtils::CleanupOutputString(name, "__cdecl ");\
+												   ::Changing::InstrumentationTimer timer##line(fixedName##line.Data)
+	#define CHNG_PROFILE_SCOPE_LINE(name, line) CHNG_PROFILE_SCOPE_LINE2(name, line)
+	#define CHNG_PROFILE_SCOPE(name) CHNG_PROFILE_SCOPE_LINE(name, __LINE__)
 	#define CHNG_PROFILE_FUNCTION() CHNG_PROFILE_SCOPE(CHNG_FUNC_SIG)
 #else
 	#define CHNG_PROFILE_BEGIN_SESSION(name, filepath)

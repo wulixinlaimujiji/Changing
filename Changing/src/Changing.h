@@ -17,6 +17,10 @@
 
 #include "Changing/ImGui/ImGuiLayer.h"
 
+#include "Changing/Scene/Scene.h"
+#include "Changing/Scene/Entity.h"
+#include "Changing/Scene/Components.h"
+
 // ---Renderer------------------------
 #include "Changing/Renderer/Renderer.h"
 #include "Changing/Renderer/Renderer2D.h"
