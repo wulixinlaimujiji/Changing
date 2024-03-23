@@ -147,6 +147,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Changing\Core\Assert.h" />
     <ClInclude Include="src\Changing.h" />
     <ClInclude Include="src\Changing\Core\Application.h" />
     <ClInclude Include="src\Changing\Core\Base.h" />

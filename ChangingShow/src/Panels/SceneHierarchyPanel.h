@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Changing/Core/Base.h"
-#include "Changing/Core/Log.h"
 #include "Changing/Scene/Scene.h"
 #include "Changing/Scene/Entity.h"
 

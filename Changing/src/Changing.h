@@ -7,6 +7,7 @@
 #include "Changing/Core/Application.h"
 #include "Changing/Core/Layer.h"
 #include "Changing/Core/Log.h"
+#include "Changing/Core/Assert.h"
 
 #include "Changing/Core/Timestep.h"
 

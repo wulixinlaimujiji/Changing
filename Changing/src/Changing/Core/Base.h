@@ -18,13 +18,8 @@
 	#define CHNG_DEBUGBREAK()
 #endif
 
-#ifdef CHNG_ENABLE_ASSERTS
-	#define CHNG_ASSERT(x, ...) { if(!(x)) { CHNG_ERROR("Assertion Failed: {0}", __VA_ARGS__); CHNG_DEBUGBREAK(); } }
-	#define CHNG_CORE_ASSERT(x, ...) { if(!(x)) { CHNG_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); CHNG_DEBUGBREAK(); } }	
-#else
-	#define CHNG_ASSERT(x, ...)
-	#define CHNG_CORE_ASSERT(x, ...)
-#endif
+#define CHNG_EXPAND_MACRO(x) x
+#define CHNG_STRINGIFY_MACRO(x) #x
 
 #define BIT(x) (1 << x)
 
@@ -49,3 +44,6 @@ namespace Changing {
 	}
 
 }
+
+#include "Changing/Core/Log.h"
+#include "Changing/Core/Assert.h"
