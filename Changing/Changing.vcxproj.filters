@@ -58,12 +58,18 @@
     <Filter Include="vendor\stb_image">
       <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Changing\Utils">
+      <UniqueIdentifier>{bb59eed3-06be-43dd-a312-63d45fde126d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Changing.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Core\Application.h">
+      <Filter>src\Changing\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Core\Assert.h">
       <Filter>src\Changing\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Core\Base.h">
@@ -166,6 +172,9 @@
       <Filter>src\Changing\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Scene\SceneCamera.h">
+      <Filter>src\Changing\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Changing\Scene\SceneSerializer.h">
       <Filter>src\Changing\Scene</Filter>
     </ClInclude>
     <ClInclude Include="src\Changing\Scene\ScriptableEntity.h">
@@ -1449,8 +1458,8 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\Core\Assert.h">
-      <Filter>src\Changing\Core</Filter>
+    <ClInclude Include="src\Changing\Utils\PlatformUtils.h">
+      <Filter>src\Changing\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -1520,6 +1529,9 @@
     <ClCompile Include="src\Changing\Scene\SceneCamera.cpp">
       <Filter>src\Changing\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="src\Changing\Scene\SceneSerializer.cpp">
+      <Filter>src\Changing\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\OpenGLBuffer.cpp">
       <Filter>src\Platform\OpenGL</Filter>
     </ClCompile>
@@ -1552,6 +1564,9 @@
     </ClCompile>
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsPlatformUtils.cpp">
+      <Filter>src\Platform\Windows</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
