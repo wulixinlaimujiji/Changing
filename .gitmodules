@@ -14,3 +14,6 @@
 	path = Changing/vendor/glm
 	url = ../../g-truc/glm.git
 	branch = master
+[submodule "Changing/vendor/yaml-cpp"]
+	path = Changing/vendor/yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp
