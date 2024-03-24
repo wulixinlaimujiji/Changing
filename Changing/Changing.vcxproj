@@ -147,6 +147,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Changing\Renderer\EditorCamera.h" />
     <ClInclude Include="src\Changing.h" />
     <ClInclude Include="src\Changing\Core\Application.h" />
     <ClInclude Include="src\Changing\Core\Assert.h" />
@@ -617,6 +618,7 @@
     <ClInclude Include="vendor\stb_image\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Changing\Renderer\EditorCamera.cpp" />
     <ClCompile Include="src\Changing\Core\Application.cpp" />
     <ClCompile Include="src\Changing\Core\Layer.cpp" />
     <ClCompile Include="src\Changing\Core\LayerStack.cpp" />
