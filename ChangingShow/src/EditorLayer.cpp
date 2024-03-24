@@ -24,6 +24,7 @@ namespace Changing {
 		m_CheckerboardTexture = Texture2D::Create("assets/textures/Checkerboard.png");
 
 		FramebufferSpecification fbSpec;
+		fbSpec.Attachments = { FramebufferTextureFormat::RGBA8, FramebufferTextureFormat::RED_INTEGER, FramebufferTextureFormat::Depth };
 		fbSpec.Width = 1280;
 		fbSpec.Height = 720;
 		m_Framebuffer = Framebuffer::Create(fbSpec);
@@ -125,8 +126,25 @@ namespace Changing {
 		RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		RenderCommand::Clear();
 
+		// Clear our entity ID attachment to -1
+		m_Framebuffer->ClearAttachment(1, -1);
+
 		// Update scene
 		m_ActiveScene->OnUpdateEditor(ts, m_EditorCamera);
+
+		auto [mx, my] = ImGui::GetMousePos();
+		mx -= m_ViewportBounds[0].x;
+		my -= m_ViewportBounds[0].y;
+		glm::vec2 viewportSize = m_ViewportBounds[1] - m_ViewportBounds[0];
+		my = viewportSize.y - my;
+		int mouseX = (int)mx;
+		int mouseY = (int)my;
+
+		if (mouseX >= 0 && mouseY >= 0 && mouseX < (int)viewportSize.x && mouseY < (int)viewportSize.y)
+		{
+			int pixelData = m_Framebuffer->ReadPixel(1, mouseX, mouseY);
+			m_HoveredEntity = pixelData == -1 ? Entity() : Entity((entt::entity)pixelData, m_ActiveScene.get());
+		}
 
 		m_Framebuffer->Unbind();
 	}
@@ -219,6 +237,11 @@ namespace Changing {
 
 		ImGui::Begin("Stats");
 
+		std::string name = "None";
+		if (m_HoveredEntity)
+			name = m_HoveredEntity.GetComponent<TagComponent>().Tag;
+		ImGui::Text("Hovered Entity: %s", name.c_str());
+
 		auto stats = Renderer2D::GetStats();
 		ImGui::Text("Renderer2D Stats:");
 		ImGui::Text("Draw Calls: %d", stats.DrawCalls);
@@ -230,6 +253,11 @@ namespace Changing {
 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2{ 0, 0 });
 		ImGui::Begin("Viewport");
+		auto viewportMinRegion = ImGui::GetWindowContentRegionMin();
+		auto viewportMaxRegion = ImGui::GetWindowContentRegionMax();
+		auto viewportOffset = ImGui::GetWindowPos();
+		m_ViewportBounds[0] = { viewportMinRegion.x + viewportOffset.x, viewportMinRegion.y + viewportOffset.y };
+		m_ViewportBounds[1] = { viewportMaxRegion.x + viewportOffset.x, viewportMaxRegion.y + viewportOffset.y };
 
 		m_ViewportFocused = ImGui::IsWindowFocused();
 		m_ViewportHovered = ImGui::IsWindowHovered();
@@ -240,7 +268,7 @@ namespace Changing {
 
 		uint64_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
 		ImGui::Image(reinterpret_cast<void*>(textureID), ImVec2{ m_ViewportSize.x, m_ViewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
-		
+	
 		// Gizmos
 		Entity selectedEntity = m_SceneHierarchyPanel.GetSelectedEntity();
 		if (selectedEntity && m_GizmoType != -1)
@@ -248,9 +276,7 @@ namespace Changing {
 			ImGuizmo::SetOrthographic(false);
 			ImGuizmo::SetDrawlist();
 
-			float windowWidth = (float)ImGui::GetWindowWidth();
-			float windowHeight = (float)ImGui::GetWindowHeight();
-			ImGuizmo::SetRect(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y, windowWidth, windowHeight);
+			ImGuizmo::SetRect(m_ViewportBounds[0].x, m_ViewportBounds[0].y, m_ViewportBounds[1].x - m_ViewportBounds[0].x, m_ViewportBounds[1].y - m_ViewportBounds[0].y);
 
 			// Editor camera
 			const glm::mat4& cameraProjection = m_EditorCamera.GetProjection();
@@ -298,6 +324,7 @@ namespace Changing {
 
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<KeyPressedEvent>(CHNG_BIND_EVENT_FN(EditorLayer::OnKeyPressed));
+		dispatcher.Dispatch<MouseButtonPressedEvent>(CHNG_BIND_EVENT_FN(EditorLayer::OnMouseButtonPressed));
 	}
 
 	bool EditorLayer::OnKeyPressed(KeyPressedEvent& e)
@@ -310,42 +337,63 @@ namespace Changing {
 		bool shift = Input::IsKeyPressed(Key::LeftShift) || Input::IsKeyPressed(Key::RightShift);
 		switch (e.GetKeyCode())
 		{
-		case Key::N:
+			case Key::N:
+			{
+				if (control)
+					NewScene();
+
+				break;
+			}
+			case Key::O:
+			{
+				if (control)
+					OpenScene();
+
+				break;
+			}
+			case Key::S:
+			{
+				if (control && shift)
+					SaveSceneAs();
+
+				break;
+			}
+
+			// Gizmos
+			case Key::Q:
+			{
+				if (!ImGuizmo::IsUsing())
+					m_GizmoType = -1;
+				break;
+			}
+			case Key::W:
+			{
+				if (!ImGuizmo::IsUsing())
+					m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
+				break;
+			}
+			case Key::E:
+			{
+				if (!ImGuizmo::IsUsing())
+					m_GizmoType = ImGuizmo::OPERATION::ROTATE;
+				break;
+			}
+			case Key::R:
+			{
+				if (!ImGuizmo::IsUsing())
+					m_GizmoType = ImGuizmo::OPERATION::SCALE;
+				break;
+			}
+		}
+	}
+	bool EditorLayer::OnMouseButtonPressed(MouseButtonPressedEvent& e)
+	{
+		if (e.GetMouseButton() == Mouse::ButtonLeft)
 		{
-			if (control)
-				NewScene();
-
-			break;
+			if (m_ViewportHovered && !ImGuizmo::IsOver() && !Input::IsKeyPressed(Key::LeftAlt))
+				m_SceneHierarchyPanel.SetSelectedEntity(m_HoveredEntity);
 		}
-		case Key::O:
-		{
-			if (control)
-				OpenScene();
-
-			break;
-		}
-		case Key::S:
-		{
-			if (control && shift)
-				SaveSceneAs();
-
-			break;
-		}
-
-		// Gizmos
-		case Key::Q:
-			m_GizmoType = -1;
-			break;
-		case Key::W:
-			m_GizmoType = ImGuizmo::OPERATION::TRANSLATE;
-			break;
-		case Key::E:
-			m_GizmoType = ImGuizmo::OPERATION::ROTATE;
-			break;
-		case Key::R:
-			m_GizmoType = ImGuizmo::OPERATION::SCALE;
-			break;
-		}
+		return false;
 	}
 
 	void EditorLayer::NewScene()

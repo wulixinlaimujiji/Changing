@@ -205,6 +205,12 @@ namespace Changing {
 
 		UploadUniformFloat(name, value);
 	}
+	void OpenGLShader::SetFloat2(const std::string& name, const glm::vec2& value)
+	{
+		CHNG_PROFILE_FUNCTION();
+
+		UploadUniformFloat2(name, value);
+	}
 	void OpenGLShader::SetFloat3(const std::string& name, const glm::vec3& value)
 	{
 		CHNG_PROFILE_FUNCTION();
