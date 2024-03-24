@@ -19,11 +19,17 @@
     <Filter Include="src\Changing\ImGui">
       <UniqueIdentifier>{656C0C5C-5150-CDB1-BAB0-C704A6B3B733}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Changing\Math">
+      <UniqueIdentifier>{B4E0F29D-20F7-F033-696E-7C55D5C3C1BB}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Changing\Renderer">
       <UniqueIdentifier>{013540EC-6DA1-FBE6-3695-9344A2C01D4F}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Changing\Scene">
       <UniqueIdentifier>{5864BC5C-4448-7DB2-ADA8-770599AB6734}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Changing\Utils">
+      <UniqueIdentifier>{9BF8E95C-87DC-AAB2-F03C-A505DC3F9534}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Platform">
       <UniqueIdentifier>{21CA02E5-0D2D-9289-B6B2-CA3FA2F45D0C}</UniqueIdentifier>
@@ -36,6 +42,9 @@
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\ImGuizmo">
+      <UniqueIdentifier>{73BF7F4C-DF4A-ED10-E85B-700554664911}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor\glm">
       <UniqueIdentifier>{829FC5A8-6E57-07F6-D75E-E051C335A2E6}</UniqueIdentifier>
@@ -57,9 +66,6 @@
     </Filter>
     <Filter Include="vendor\stb_image">
       <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\Changing\Utils">
-      <UniqueIdentifier>{bb59eed3-06be-43dd-a312-63d45fde126d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +129,9 @@
     <ClInclude Include="src\Changing\ImGui\ImGuiLayer.h">
       <Filter>src\Changing\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\Changing\Math\Math.h">
+      <Filter>src\Changing\Math</Filter>
+    </ClInclude>
     <ClInclude Include="src\Changing\Renderer\Buffer.h">
       <Filter>src\Changing\Renderer</Filter>
     </ClInclude>
@@ -180,6 +189,9 @@
     <ClInclude Include="src\Changing\Scene\ScriptableEntity.h">
       <Filter>src\Changing\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="src\Changing\Utils\PlatformUtils.h">
+      <Filter>src\Changing\Utils</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\OpenGLBuffer.h">
       <Filter>src\Platform\OpenGL</Filter>
     </ClInclude>
@@ -206,6 +218,9 @@
     </ClInclude>
     <ClInclude Include="src\chngpch.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\ImGuizmo\ImGuizmo.h">
+      <Filter>vendor\ImGuizmo</Filter>
     </ClInclude>
     <ClInclude Include="vendor\glm\glm\common.hpp">
       <Filter>vendor\glm\glm</Filter>
@@ -1458,9 +1473,6 @@
     <ClInclude Include="vendor\stb_image\stb_image.h">
       <Filter>vendor\stb_image</Filter>
     </ClInclude>
-    <ClInclude Include="src\Changing\Utils\PlatformUtils.h">
-      <Filter>src\Changing\Utils</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Changing\Core\Application.cpp">
@@ -1483,6 +1495,9 @@
     </ClCompile>
     <ClCompile Include="src\Changing\ImGui\ImGuiLayer.cpp">
       <Filter>src\Changing\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Changing\Math\Math.cpp">
+      <Filter>src\Changing\Math</Filter>
     </ClCompile>
     <ClCompile Include="src\Changing\Renderer\Buffer.cpp">
       <Filter>src\Changing\Renderer</Filter>
@@ -1556,17 +1571,20 @@
     <ClCompile Include="src\Platform\Windows\WindowsInput.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsPlatformUtils.cpp">
+      <Filter>src\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\chngpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="vendor\ImGuizmo\ImGuizmo.cpp">
+      <Filter>vendor\ImGuizmo</Filter>
+    </ClCompile>
     <ClCompile Include="vendor\stb_image\stb_image.cpp">
       <Filter>vendor\stb_image</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\Windows\WindowsPlatformUtils.cpp">
-      <Filter>src\Platform\Windows</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

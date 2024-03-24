@@ -19,7 +19,8 @@ project "ChangingShow"
 		"%{wks.location}/Changing/src",
 		"%{wks.location}/Changing/vendor",
 		"%{IncludeDir.glm}",
-		"%{IncludeDir.entt}"
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.ImGuizmo}"
 	}
 
 	links
